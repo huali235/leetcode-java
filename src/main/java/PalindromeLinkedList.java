@@ -15,6 +15,7 @@ public class PalindromeLinkedList {
         ListNode slow = head;
         ListNode fast = head;
 
+        // Find the middle point of the Linked List
         while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;
@@ -23,6 +24,7 @@ public class PalindromeLinkedList {
         ListNode last = null;
         ListNode current = slow;
 
+        // Iterate through the second half of List
         while(current != null){
             ListNode newNode = current.next;
             current.next = last;
@@ -32,6 +34,7 @@ public class PalindromeLinkedList {
         ListNode secondHalf = last;
 
         ListNode firstHalf = head;
+        // Check if the values of the second half equal the values of the first half
         while(secondHalf != null){
             if(firstHalf.val != secondHalf.val){
                 return false;
